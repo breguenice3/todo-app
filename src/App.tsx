@@ -1,9 +1,9 @@
-import Body from "./components/body/body";
+import Bgd from "./components/body/body";
 
 function App() {
   return (
     <div>
-      <Body />
+      <Bgd bg="a" />
     </div>
   );
 }
