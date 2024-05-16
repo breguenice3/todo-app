@@ -1,0 +1,25 @@
+.bg{
+    background-image: url('../body/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100vw;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding-top: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}

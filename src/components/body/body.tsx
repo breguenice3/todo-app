@@ -1,22 +1,20 @@
-import { useState } from "react"
-import styled from "styled-components"
+import './style.css'
 
-export default function Bgd(bg: any) {
-
-    // const [bg, setBg] = useState("light");
+export default function Bgd() {
 
     return (
-        <div>
-            <StyledDiv>
-            </StyledDiv>
+        <div className='bg'>
+            <div className='container'>
+                <div className='header-container'>
+                    <h1>T O D O</h1>
+
+                    <button></button>
+                </div>
+                <div>
+                    <input type="text" name="" id="" />
+                </div>
+            </div>
+
         </div>
     )
 }
-
-const StyledDiv = styled.div`
-    width: 100vw;
-    height: 45vh;
-    background-image: url(${require(`../body/bg-desktop-light.jpg`)});
-    background-size: cover;
-    background-repeat: no-repeat;
-`
