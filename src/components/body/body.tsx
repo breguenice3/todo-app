@@ -60,7 +60,7 @@ export default function Bgd() {
                 <Itens>
                     {todo.map((item) => {
                         return (
-                            <Item key={item.id} name={item.name} />
+                            <Item key={item.id} name={item.name}/>
                         )
                     })}
                 </Itens>
