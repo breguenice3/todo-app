@@ -11,6 +11,21 @@
     gap: 20px;
 }
 
+.bg1{
+    background-image: url('../body/bg-desktop-dark.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: hsl(235, 21%, 11%);
+    color: white;
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -29,6 +44,16 @@
 
 .theme{
     background-image: url('./icon-moon.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.theme2{
+    background-image: url('./icon-sun.svg');
     background-repeat: no-repeat;
     width: 30px;
     height: 30px;
