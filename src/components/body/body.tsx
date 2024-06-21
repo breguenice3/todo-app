@@ -32,6 +32,15 @@ export default function Bgd() {
                 color: ${themeLetter};
             }
     `
+    const ButtonFunc = styled.button`
+    background-color: transparent;
+    border: none;
+    color: gray;
+    cursor: pointer;
+    &:hover{
+        color: blue;
+    }
+`
 
     const todoInicial = useRef([
         {
@@ -57,8 +66,6 @@ export default function Bgd() {
         setTodo(todoInicial.current);
     }, []);
 
-    console.log(todo[3]);
-    
 
     return (
         <div className='bg' id='bg'>
@@ -96,8 +103,6 @@ export default function Bgd() {
                             };
                             setTodo([...todo, newTodo]);
                             todoInicial.current.push(newTodo);
-                        } else {
-                            console.log('errora');
                         }
                         txt.value = ""
                     }}>Add</button>
@@ -107,7 +112,7 @@ export default function Bgd() {
                 <Itens>
                     {todo.map((item) => {
                         return (
-                            <Item key={item.id} name={item.name} completed={item.completed} bgcolor={theme} lettercolor={themeLetter} list={todoInicial} itemid={item.id} todo={todo} setTodo={setTodo}/>
+                            <Item key={item.id} name={item.name} completed={item.completed} bgcolor={theme} lettercolor={themeLetter} itemid={item.id} todo={todo} setTodo={setTodo}/>
                         )
                     })}
                 </Itens>
@@ -116,12 +121,26 @@ export default function Bgd() {
                         <p>{todo.length} items left</p>
                     </div>
                     <div>
-                        <button>All</button>
-                        <button>Active</button>
-                        <button>Completed</button>
+                        <ButtonFunc onClick={() => {
+                            setTodo(todoInicial.current);
+                        }}>All</ButtonFunc>
+                        <ButtonFunc onClick={() => {
+                            setTodo(todoInicial.current);
+                            const filtro = todoInicial.current.filter((item) => {
+                                return (!item.completed)
+                            })
+                            setTodo(filtro)
+                        }}>Active</ButtonFunc>
+                        <ButtonFunc onClick={() => {
+                            setTodo(todoInicial.current);
+                            const filtro2 = todoInicial.current.filter((item) => {
+                                return (item.completed)
+                            })
+                            setTodo(filtro2)
+                        }}>Completed</ButtonFunc>
                     </div>
                     <div>
-                        <button>Clear Completed</button>
+                        <ButtonFunc>Clear Completed</ButtonFunc>
                     </div>
                 </Buttons>
             </List>
@@ -139,4 +158,12 @@ const Buttons = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 0px 5px;
+
+    & div{
+        display: flex;
+        gap: 15px;
+        & p{
+            color: gray;
+        }
+    }
 `
