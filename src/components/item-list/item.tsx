@@ -24,32 +24,20 @@ export default function Item({ name, completed, lettercolor, itemid, todo, setTo
         setTodo(updatedList);
     };
 
-    if (completed) {
         return (
             <ItemDiv>
                 <div>
-                    <p id={name} className="completed">
+                    <StyledButton onClick={handleClick} style={{ color: `${lettercolor}` }} className={(completed) ? 'disabled' : ''}>
+                        complete
+                    </StyledButton>
+                    <p id={name} className={(completed) ? 'completed' : ''}>
                         {name}
                     </p>
                 </div>
                 <StyledHR />
             </ItemDiv>
         )
-    } else {
-        return (
-            <ItemDiv>
-                <div>
-                    <StyledButton onClick={handleClick} style={{color: `${lettercolor}`}}>
-                        complete
-                    </StyledButton>
-                    <p id={name}>
-                        {name}
-                    </p>
-                </div>
-                <StyledHR />
-            </ItemDiv >
-        )
-    }
+
 }
 
 

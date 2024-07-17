@@ -61,10 +61,11 @@ export default function Bgd() {
     ]);
 
     const [todo, setTodo] = useState(todoInicial.current);
+    const [todoShow, setTodoShow] = useState(todo)
 
     useEffect(() => {
-        setTodo(todoInicial.current);
-    }, []);
+        setTodoShow(todo)
+    }, [todo]);
 
 
     return (
@@ -110,37 +111,42 @@ export default function Bgd() {
             </div>
             <List>
                 <Itens>
-                    {todo.map((item) => {
+                    {todoShow.map((item) => {
                         return (
-                            <Item key={item.id} name={item.name} completed={item.completed} bgcolor={theme} lettercolor={themeLetter} itemid={item.id} todo={todo} setTodo={setTodo}/>
+                            <Item key={item.id} name={item.name} completed={item.completed} bgcolor={theme} lettercolor={themeLetter} itemid={item.id} todo={todo} setTodo={setTodo} />
                         )
                     })}
                 </Itens>
                 <Buttons>
                     <div>
-                        <p>{todo.length} items left</p>
+                        <p>{todoShow.length} items left</p>
                     </div>
                     <div>
                         <ButtonFunc onClick={() => {
-                            setTodo(todoInicial.current);
+                            setTodoShow(todo);
                         }}>All</ButtonFunc>
                         <ButtonFunc onClick={() => {
-                            setTodo(todoInicial.current);
-                            const filtro = todoInicial.current.filter((item) => {
+                            const filtro = todo.filter((item) => {
                                 return (!item.completed)
                             })
-                            setTodo(filtro)
+                            setTodoShow(filtro)
                         }}>Active</ButtonFunc>
                         <ButtonFunc onClick={() => {
-                            setTodo(todoInicial.current);
-                            const filtro2 = todoInicial.current.filter((item) => {
+                            const filtro2 = todo.filter((item) => {
                                 return (item.completed)
                             })
-                            setTodo(filtro2)
+                            setTodoShow(filtro2)
                         }}>Completed</ButtonFunc>
                     </div>
                     <div>
-                        <ButtonFunc>Clear Completed</ButtonFunc>
+                        <ButtonFunc
+                            onClick={() => {
+                                const newClearList = todo.filter((item) => {
+                                    return(!item.completed)
+                                })
+                                setTodo(newClearList)
+                            }}
+                        >Clear Completed</ButtonFunc>
                     </div>
                 </Buttons>
             </List>
