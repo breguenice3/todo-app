@@ -2,6 +2,10 @@
 
 ![Design preview for the Todo app coding challenge](./design/desktop-preview.jpg)
 
+## Detalhes
+
+Projeto feito com React & Typescript, utilizando styled components e css, o site se resume em uma todo list, onde é possível apagar todas as tasks completas e adicionar novas, além de um botão para marcar as tasks completadas.
+
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
