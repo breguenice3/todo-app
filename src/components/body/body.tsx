@@ -14,6 +14,11 @@ export default function Bgd() {
         background-color: ${theme};
         border-radius: 5px;
         box-shadow: 0 0 0.1em black;
+
+        @media screen and (max-width: 1024px){
+            height: 400px;
+            width: 370px;
+        }
     `
 
     const DivInput = styled.div`

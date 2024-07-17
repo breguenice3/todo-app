@@ -24,19 +24,19 @@ export default function Item({ name, completed, lettercolor, itemid, todo, setTo
         setTodo(updatedList);
     };
 
-        return (
-            <ItemDiv>
-                <div>
-                    <StyledButton onClick={handleClick} style={{ color: `${lettercolor}` }} className={(completed) ? 'disabled' : ''}>
-                        complete
-                    </StyledButton>
-                    <p id={name} className={(completed) ? 'completed' : ''}>
-                        {name}
-                    </p>
-                </div>
-                <StyledHR />
-            </ItemDiv>
-        )
+    return (
+        <ItemDiv>
+            <div>
+                <StyledButton onClick={handleClick} style={{ color: `${lettercolor}` }} className={(completed) ? 'disabled' : ''}>
+                    complete
+                </StyledButton>
+                <p id={name} className={(completed) ? 'completed' : ''}>
+                    {name}
+                </p>
+            </div>
+            <StyledHR />
+        </ItemDiv>
+    )
 
 }
 
@@ -51,6 +51,9 @@ flex-direction: column;
     gap: 10px;
     padding: 15px;
     align-items: center;
+}
+@media screen and (max-width: 1024px){
+    height: 60px;
 }
 `
 

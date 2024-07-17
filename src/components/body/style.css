@@ -1,4 +1,4 @@
-.bg{
+.bg {
     background-image: url('../body/bg-desktop-light.jpg');
     background-repeat: no-repeat;
     background-size: contain;
@@ -11,7 +11,7 @@
     gap: 20px;
 }
 
-.bg1{
+.bg1 {
     background-image: url('../body/bg-desktop-dark.jpg');
     background-repeat: no-repeat;
     background-size: contain;
@@ -26,7 +26,7 @@
     color: white;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -34,7 +34,7 @@
     justify-content: center;
 }
 
-.header-container{
+.header-container {
     display: flex;
     justify-content: space-between;
     width: 500px;
@@ -42,7 +42,7 @@
     padding-bottom: 50px;
 }
 
-.theme{
+.theme {
     background-image: url('./icon-moon.svg');
     background-repeat: no-repeat;
     width: 30px;
@@ -52,7 +52,7 @@
     cursor: pointer;
 }
 
-.theme2{
+.theme2 {
     background-image: url('./icon-sun.svg');
     background-repeat: no-repeat;
     width: 30px;
@@ -62,12 +62,12 @@
     cursor: pointer;
 }
 
-h1{
+h1 {
     font-size: 34px;
     color: white;
 }
 
-input{
+input {
     width: 460px;
     height: 60px;
     border-radius: 15px;
@@ -76,13 +76,12 @@ input{
     font-size: 24px;
 }
 
-::placeholder{
+::placeholder {
     color: gray;
     opacity: 0.7;
 }
 
-.add{
-    height: 100px;
+.add {
     height: 50px;
     border: none;
     border-radius: 100%;
@@ -90,6 +89,36 @@ input{
     cursor: pointer;
 }
 
-.add:hover{
+.add:hover {
     background-color: bisque;
+}
+
+@media screen and (max-width: 1024px) {
+    .bg {
+        background-image: url('../body/bg-mobile-light.jpg');
+        background-size: contain;
+        width: 100%;
+        justify-content: start;
+    }
+
+    .bg1 {
+        background-image: url('../body/bg-mobile-dark.jpg');
+        justify-content: start;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        width: 425px;
+        align-items: center;
+        padding: 50px 25px 40px 25px;
+    }
+
+    input {
+        width: 300px;
+        height: 50px;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 20px;
+    }
 }
